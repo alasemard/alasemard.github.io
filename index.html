@@ -1,120 +1,14 @@
-
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
-
-<html>
+<!doctype html>
+<html lang="en" data-critters-container>
 <head>
-    <title>Tabela do Judiciario - Tecnico Judiciario</title>
-    <meta http-equiv="content-type" content="text/html; charset=utf-8">
-    
-		<link rel="stylesheet" href="css/jquery.mobile-1.4.5.min.css" />   
-		
-		<script type="text/javascript" language="javascript" src="js/jquery.min.js" >
-			//jQuery ok
-		</script>
-			
-		<script  src="js/jquery.mobile-1.4.5.min.js" >
-			//jQuery Mobile	
-		</script>
-		
-		<script type="text/javascript" language="javascript" src="js/script.js" >
-			//negocio
-		</script> 
-</head>
+  <meta charset="utf-8">
+  <title>Gerador de Token TOTP</title>
+  <base href>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+<style>:root{--blue: #007bff;--indigo: #6610f2;--purple: #6f42c1;--pink: #e83e8c;--red: #dc3545;--orange: #fd7e14;--yellow: #ffc107;--green: #28a745;--teal: #20c997;--cyan: #17a2b8;--white: #fff;--gray: #6c757d;--gray-dark: #343a40;--primary: #007bff;--secondary: #6c757d;--success: #28a745;--info: #17a2b8;--warning: #ffc107;--danger: #dc3545;--light: #f8f9fa;--dark: #343a40;--breakpoint-xs: 0;--breakpoint-sm: 576px;--breakpoint-md: 768px;--breakpoint-lg: 992px;--breakpoint-xl: 1200px;--font-family-sans-serif: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";--font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace}*,*:before,*:after{box-sizing:border-box}html{font-family:sans-serif;line-height:1.15;-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;-ms-overflow-style:scrollbar;-webkit-tap-highlight-color:rgba(0,0,0,0)}@-ms-viewport{width:device-width}body{margin:0;font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji",Segoe UI Symbol,"Noto Color Emoji";font-size:1rem;font-weight:400;line-height:1.5;color:#212529;text-align:left;background-color:#fff}@-webkit-keyframes progress-bar-stripes{0%{background-position:1rem 0}to{background-position:0 0}}@media print{*,*:before,*:after{text-shadow:none!important;box-shadow:none!important}@page{size:a3}body{min-width:992px!important}}
+</style><link rel="stylesheet" href="styles-GIRN4N6V.css" media="print" onload="this.media='all'"><noscript><link rel="stylesheet" href="styles-GIRN4N6V.css"></noscript></head>
 <body>
-   
-	<h3>Tabela do Judiciario - Tecnico Judiciario</h3>
-   
-    <div id="dados" class="ui-bar ui-bar-a ui-corner-all">
-		
-			<table>
-				<tr>
-					<td>Ano reajuste:</td>
-					<td>
-						<select name="ano" id="mesAno">
-							<option value="jun-2017">Jun/2017</option>
-							<option value="nov-2017">Nov/2017</option>
-							<option value="jun-2018">Jun/2018</option>
-							<option value="nov-2018">Nov/2018</option>
-							<option value="jan-2019">Jan/2019</option>
-						</select>
-					<td>
-				</tr>
-				<tr>
-					<td>Classe/Padrao:</td>
-					<td>
-						<select name="padrao" id="vencimento">
-							<option value="a1">A1</option>
-							<option value="a2">A2</option>
-							<option value="a3">A3</option>
-							<option value="a4">A4</option>
-							<option value="a5">A5</option>
-							<option value="b6">B6</option>
-							<option value="b7">B7</option>
-							<option value="b8">B8</option>
-							<option value="b9">B9</option>
-							<option value="b10">B10</option>
-							<option value="c11">C11</option>
-							<option value="c12">C12</option>
-							<option value="c13">C13</option>
-						</select>
-					<td>
-				</tr>
-				<tr>
-					<td>Selecione</td>
-					<td>
-						<label><input type="checkbox" id="creche" name="creche" value="creche" checked>Aux. Creche</label>
-						<label><input type="checkbox" id="aq"  name="aq" value="aq" checked>AQ (5% sobre VB)</label>
-						<label><input type="checkbox" id="reducao" name="reducao" value="creche">30hs</label>
-						<label><input type="checkbox" id="alimentacao" name="alimentacao" value="aq" checked>Alimentacao</label>
-					</td>
-				</tr>
-				<tr>
-					<td>FC / CCJ:</td>
-					<td>
-						<select name="funcao" id="fc">
-							<option value="sem">Sem FC</option>
-							<option value="fc1">FC-01</option>
-							<option value="fc2">FC-02</option>
-							<option value="fc3">FC-03</option>
-							<option value="fc4">FC-04</option>
-							<option value="fc5">FC-05</option>
-							<option value="fc6">FC-06</option>
-						</select>
-					</td>
-				</tr>
-				<tr class="bt" >
-					<td colspan="2"><input type="button" value="Calcular" id="calcular" size="8" /></td>
-				</tr>
-			</table>
-		
-		</div>
-		
-		<div id="resultado" class="ui-bar ui-bar-a ui-corner-all">
-		
-			<table>
-				<tr>
-					<td><strong>Remuneracao Bruta:</strong></td>
-					<td><strong>R$ <span id="bruto"> 0,00</span></strong><td>
-				</tr>
-				<tr>
-					<td>Desconto de Imposto de Renda:</td>
-					<td>R$ <span id="irpf">0,00</span></td>
-				</tr>
-				<tr>
-					<td>Desconto de Previdencia Social:</td>
-					<td>R$ <span id="seguridade">0,00</span></td>
-				</tr>
-				<tr>
-					<td><strong>Total de Descontos:</strong></td>
-					<td><strong>R$ <span id="desc">0,00</span></strong></td>
-				</tr>
-				<tr>
-					<td><strong>Remuneracao Liquida:</strong></td>
-					<td><strong>R$  <span id="liquido"> 0,00</strong></span></td>
-				</tr>
-			</table>
-			
-		</div>
-
-</body>
+  <app-root></app-root>
+<script src="polyfills-RT5I6R6G.js" type="module"></script><script src="scripts-ZFMJT4IX.js" defer></script><script src="main-XHAZEODW.js" type="module"></script></body>
 </html>
